@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Palabras para Dibujar</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 420px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .cards {
+      display: flex;
+      gap: 10px;
+    }
+
+    .card {
+      flex: 1;
+      background: white;
+      border-radius: 16px;
+      padding: 30px 10px;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 120px;
+      word-break: break-word;
+    }
+
+    button {
+      border: none;
+      background: #2563eb;
+      color: white;
+      font-size: 1.1rem;
+      padding: 18px;
+      border-radius: 16px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transition: 0.2s;
+    }
+
+    button:active {
+      transform: scale(0.98);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="cards">
+      <div class="card" id="word1"></div>
+      <div class="card" id="word2"></div>
+      <div class="card" id="word3"></div>
+    </div>
+
+    <button onclick="generateWords()">Nuevas palabras</button>
+  </div>
+
+  <script>
+    const words = [
+      "bicicleta", "astronauta", "castillo", "volcán", "murciélago", "pingüino", "cocodrilo", "paraguas", "mochila", "caracol",
+      "brújula", "tornado", "submarino", "robot", "semáforo", "patineta", "dragón", "hamaca", "sirena", "caballero",
+      "princesa", "detective", "pirata", "mapa", "tesoro", "diamante", "cohete", "planeta", "galaxia", "telescopio",
+      "dinosaurio", "fósil", "laboratorio", "científico", "microscopio", "imán", "relámpago", "arcoíris", "tormenta", "cascada",
+      "desierto", "jungla", "iceberg", "cueva", "montaña", "puente", "faro", "isla", "catarata", "camaleón",
+      "jirafa", "rinoceronte", "hipopótamo", "canguro", "panda", "erizo", "búho", "delfín", "tiburón", "pulpo",
+      "medusa", "estrella de mar", "cebra", "hormiga", "abeja", "mariposa", "escorpión", "araña", "gusano", "tractor",
+      "ambulancia", "helicóptero", "motocicleta", "velero", "tren", "globo aerostático", "monopatín", "excavadora", "patrulla", "bombero",
+      "veterinario", "panadero", "cocinero", "peluquero", "fotógrafo", "pintor", "músico", "mago", "payaso", "karate",
+      "gimnasia", "ajedrez", "natación", "básquetbol", "fútbol", "tenis", "escondida", "rompecabezas", "videojuego", "joystick",
+      "batería", "guitarra", "piano", "micrófono", "parlante", "auriculares", "linterna", "reloj", "candado", "llave",
+      "cofre", "hamaca paraguaya", "chimenea", "ascensor", "escalera", "estatua", "laberinto", "biblioteca", "museo", "acuario",
+      "zoológico", "parque de diversiones", "montaña rusa", "carrusel", "circo", "carnaval", "desfile", "fogata", "picnic", "campamento",
+      "carpa", "binoculares", "chocolate", "hamburguesa", "palomitas", "limonada", "sandía", "heladería", "espaguetis", "pizza",
+      "sushi", "panqueques", "cupcake", "volcán de chocolate", "batido", "helado derretido", "globo", "cometa", "marioneta", "muñeco de nieve",
+      "fantasma", "vampiro", "monstruo", "zombie", "hechicero", "poción", "escoba", "caldero", "castor", "topo",
+      "mapache", "zorro", "ardilla", "pavo real", "flamenco", "loro", "iglú", "oasis", "molino", "rueda",
+      "dominó", "bingo", "trofeo", "medalla", "pista de hielo", "patines", "surfista", "buzo", "pirámide", "esfinge",
+      "robot gigante", "nave espacial", "alienígena", "portal", "máquina del tiempo", "superhéroe", "villano", "capa", "rayo láser", "espada",
+      "escudo", "catapulta", "castillo inflable", "feria", "maratón", "truco de magia", "árbol gigante", "casa embrujada"
+    ];
+
+    function generateWords() {
+      const shuffled = [...words].sort(() => Math.random() - 0.5);
+
+      document.getElementById('word1').textContent = shuffled[0];
+      document.getElementById('word2').textContent = shuffled[1];
+      document.getElementById('word3').textContent = shuffled[2];
+    }
+
+    generateWords();
+  </script>
+</body>
+</html>
